@@ -1,0 +1,337 @@
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+@font-face {
+  font-family: "Buffalo";
+  src: url(../fonts/Buffalo.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow: hidden;
+}
+/* INICIO BG */
+.bg-pf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(#fff, #000); 
+}
+.bg-pf img {
+  width: 40%;
+  opacity: 1;
+}
+.bg-pf img.remove{
+  opacity: 0; 
+}
+/* FIM BG */
+
+/* INICIO CONTAINER */
+.container {
+  width: 100%;
+  height: 100vh; 
+  position: relative;
+  z-index: 0;
+}
+#check-menu {
+    position: absolute;
+    opacity: 0;
+}
+section#home{
+  right: 0;  
+}
+    /* INICIO MENU X */
+    .menu {
+        font-family: "Buffalo";
+        position: relative;
+        background: none;
+        width: 10%;
+        height: 100vh;
+        top: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu img {
+        width: 50%;
+        position: absolute;
+        top: 5%;
+        left: 25%;
+    }
+
+        /* INICIO LABEL */
+        label {          
+          position: relative;            
+          top: 2%;
+          left: 5%;            
+          cursor: pointer;
+          height: 10px;
+          width: 15px;
+          z-index: 2;            
+        }
+        label span {                            
+          position: absolute;     
+          display: block;
+          height: 1px;            
+          width: 100%;            
+          background: #fff;
+          transition: 0.2s ease-in-out;
+        }
+        label span:nth-child(1) {
+          top: 0;
+          left: 0px;
+        }
+        label span:nth-child(2) {
+          top: 4px;
+          left: 0px;
+        }
+        label span:nth-child(3) {
+          top: 8px;
+          left: 0px;
+        }
+        #check-menu:checked + .menu label span:nth-child(1) {
+          transform: rotate(45deg);
+          top: 8px;
+          left: 0px;
+          transition: 0.25s ease;
+        }
+        #check-menu:checked + .menu label span:nth-child(2) {
+          transform: rotate(-45deg);
+          top: 8px;
+          left: 0px;
+          transition: 0.25s ease;
+        }
+        #check-menu:checked + .menu label span:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 8px;
+          left: 0px;
+          transition: 0.25s ease;
+        }
+        /* FIM LABEL */
+
+        /* INICIO NAVIGATOR MENU */
+        .navigation-menu {
+            position: absolute;
+            top: 0;
+            left: -110%;
+            background: linear-gradient(#000, #999); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            width: 100%;
+            height: 100vh;
+            padding: 30px 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            transition: all 0.5s;
+            z-index: 1;            
+            -webkit-box-shadow: 10px 8px 9px 5px #000000;
+            box-shadow: 10px 8px 9px 5px #000000;
+          }
+          .navigation-menu li {
+            cursor: pointer;
+            width: 70%;            
+          }          
+          .navigation-menu li:hover a {
+            border-bottom: 2px solid #fff;            
+          }
+          .navigation-menu a {
+            color: #fff;
+            font-size: 35px;
+            text-decoration: none;
+            display: block;                        
+          }
+          #check-menu:checked + .menu ul.navigation-menu {
+            left: 0;
+            transition: all 0.2s ease-in-out;
+          }
+          /* FIM NAVIGATION MENU */
+          
+          /* INICIO SECTIONS */  
+          .always-photo {
+            position: absolute;
+            top: calc(50% - 325px);
+            left: 5%;            
+            width: 650px  
+          }        
+          .content {
+            background: radial-gradient(#fff, #000);
+            position: absolute;
+            right: -100%;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;            
+            transition: all 1s ease;
+          }
+          .content.show {
+            right: 0;  
+            transition: all 1s ease-in-out;
+          }
+          /* INICIO HOME */
+          .home{
+            position: absolute;
+            color: #000;
+            width: 100%;
+            min-height: 350px;
+            line-height: 36px;
+            left: 0;
+            text-align: center;
+            top: calc(50% - 225px);                                    
+            z-index: 0;
+          }
+          .home h1{
+            width: 100%;
+            position: absolute;            
+            top: 100%;
+            font-size: 100px;
+            font-family: "Buffalo";
+            animation: textoAnime 10s infinite;
+          }
+          @keyframes textoAnime {
+            0%{
+              color: #000;
+              opacity: 40%;
+              transition: all 1s ease-in-out;
+            }
+            50%{
+              color: transparent;
+              transition: all 1s ease-in-out;
+            }
+            100%{
+              color: #000;
+              color: #000;
+              transition: all 1s ease-in-out;
+            }
+          }
+          /* INICIO SOBRE */                    
+          .frase h1{
+            font-size: 60px;
+            line-height: 36px;
+          }
+          .frase {
+            font-family: "Buffalo";
+            position: absolute;
+            color: #000;
+            width: 50%;
+            height: 40%;            
+            left: 45%;
+            top: calc(50% - 20%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;            
+            z-index: 0;
+          }                            
+          .frase p{
+            width: 60%;
+            line-height: 60px;
+            text-align: justify;
+            text-indent: 45px;
+            font-size: 50px;
+          }
+          /* FIM SOBRE */
+
+          /* INICIO HISTORIAS */
+          #stories .photo-stories{
+            width: 50%;
+          }
+          #stories .frase h1{
+            font-size: 50px;
+            position: absolute;
+            top: 70%;
+          }
+          /* FIM HISTORIAS */
+
+          /* FIM SECTIONS */
+
+/* FIM CONTAINER */
+
+/* RESPONSIVO */
+@media (max-width: 428px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+  label{
+    width: 30px;
+    top: 2%;
+    left: 45%;
+  }
+  label span:nth-child(1) {
+    top: 0;
+    left: 0px;
+  }
+  label span:nth-child(2) {
+    top: 5px;
+    left: 0px;
+  }
+  label span:nth-child(3) {
+    top: 10px;
+    left: 0px;
+  }
+  .navigation-menu { 
+    width: 250px;
+    left: -300px;
+  }
+  #check-menu:checked + .container .menu ul.navigation-menu {
+    left: 0;
+  }
+  .content {
+    width: 100%;
+  }
+  label span {
+    height: 1px;
+    width: 70%;
+  }
+  .bg-pf img {
+    position: absolute;
+    left: calc(50% - 40%);
+    top: calc(50% - 30%);
+    width: 80%;    
+  }
+  #home h1{
+    font-size: 50px;
+    top: 60%;
+  }
+  #about img{    
+    left: calc(50% - 40%);
+    width: 80%;    
+  }  
+  #about h1{
+    font-size: 45px;    
+  }
+  .frase{
+    left: 10%;
+    top: 45%;
+    width: 80%;
+  }
+  .frase p{
+    width: 100%;
+    line-height: 24px;
+    text-align: justify;
+    text-indent: 45px;
+    font-size: 24px;
+  }
+   /* INICIO HISTORIAS */
+   #stories .photo-stories{
+    width: 90%;
+    top: 20%;
+  }
+  #stories .frase h1{
+    font-size: 50px;
+    position: absolute;
+    top: 10%;
+  }
+  /* FIM HISTORIAS */
+}
